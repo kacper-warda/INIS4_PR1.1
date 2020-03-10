@@ -15,6 +15,9 @@ public class Main {
         me.pet = dog;
 
         me.pet.feed();
+        me.pet.feed();
+        me.pet.feed();
+        me.pet.feed();
 
         System.out.println(me.pet.name);
 
