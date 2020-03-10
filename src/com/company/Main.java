@@ -12,12 +12,17 @@ public class Main {
         Human me = new Human();
         me.firstName = "Kacper";
         me.lastName = "Warda";
-        me.pet = dog;
+        me.pet = new Animal("lion");
+
 
         me.pet.feed();
         me.pet.feed();
         me.pet.feed();
         me.pet.feed();
+
+        me.pet = dog;
+        me.pet.feed();
+
 
         System.out.println(me.pet.name);
 
