@@ -7,6 +7,7 @@ public class Car {
     public final Double engineVolume;
 
     public String plates;
+    public Double value = 1000.0;
 
 
     public Car(String producer, String model, Integer yearOfProduction, Double engineVolume) {

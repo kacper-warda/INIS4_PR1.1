@@ -18,14 +18,15 @@ public class Main {
         me.pet.takeForAWalk();
 
 
-        me.car = new Car("Fiat", "Bravo", 2015, 1.8);
-        me.car.plates = "GDA1234";
+        me.setCar(new Car("Fiat", "Bravo", 2015, 1.8));
+        me.getCar().plates = "GDA1234";
 
-        System.out.println(me.car.producer + " " + me.car.plates);
+        System.out.println(me.getCar().producer + " " + me.getCar().plates);
 
         System.out.println("I earn " + me.getSalary());
 
         me.setSalary(200.0);
+
 
     }
 }
