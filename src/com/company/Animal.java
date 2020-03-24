@@ -24,7 +24,24 @@ public class Animal {
     }
 
     void feed() {
-        weight++;
-        System.out.println("thx for food bro, my weight is now " + weight);
+        if (weight > 0) {
+            weight++;
+            System.out.println("thx for food bro, my weight is now " + weight);
+        } else {
+            System.out.println("too late, sorry");
+        }
+    }
+
+    void takeForAWalk() {
+        weight--;
+        if (weight <= 0) {
+            System.out.println("you can not walk the town with dead animal");
+        } else if (weight < 3) {
+            System.out.println("thx for a walk but im hungry");
+        } else {
+            System.out.println("thx for a walk");
+        }
+
+
     }
 }

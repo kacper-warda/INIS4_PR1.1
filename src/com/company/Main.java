@@ -12,19 +12,27 @@ public class Main {
         Human me = new Human();
         me.firstName = "Kacper";
         me.lastName = "Warda";
-        me.pet = new Animal("lion");
-
-
-        me.pet.feed();
-        me.pet.feed();
-        me.pet.feed();
-        me.pet.feed();
 
         me.pet = dog;
         me.pet.feed();
+        me.pet.takeForAWalk();
+        me.pet.takeForAWalk();
+        me.pet.takeForAWalk();
 
+        me.pet.feed();
+        me.pet.takeForAWalk();
+        me.pet.takeForAWalk();
+        me.pet.takeForAWalk();
+        me.pet.takeForAWalk();
+        me.pet.takeForAWalk();
+        me.pet.takeForAWalk();
+        me.pet.takeForAWalk();
+        me.pet.takeForAWalk();
+        me.pet.takeForAWalk();
+        me.pet.takeForAWalk();
+        me.pet.feed();
 
-        System.out.println(me.pet.name);
+        
 
     }
 }
