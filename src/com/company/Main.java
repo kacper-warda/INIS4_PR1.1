@@ -16,23 +16,13 @@ public class Main {
         me.pet = dog;
         me.pet.feed();
         me.pet.takeForAWalk();
-        me.pet.takeForAWalk();
-        me.pet.takeForAWalk();
 
-        me.pet.feed();
-        me.pet.takeForAWalk();
-        me.pet.takeForAWalk();
-        me.pet.takeForAWalk();
-        me.pet.takeForAWalk();
-        me.pet.takeForAWalk();
-        me.pet.takeForAWalk();
-        me.pet.takeForAWalk();
-        me.pet.takeForAWalk();
-        me.pet.takeForAWalk();
-        me.pet.takeForAWalk();
-        me.pet.feed();
 
-        
+        me.car = new Car("Fiat", "Bravo",2015, 1.8);
+        me.car.plates = "GDA1234";
+
+        System.out.println(me.car.producer + " " + me.car.plates);
+
 
     }
 }
