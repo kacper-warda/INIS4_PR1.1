@@ -1,7 +1,6 @@
 package com.company;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
+import com.company.devices.Car;
 
 public class Main {
 
@@ -30,5 +29,9 @@ public class Main {
 
         System.out.println(new Car("Fiat", "Bravo", 2015, 1.8));
 
+        System.out.println(me);
+        System.out.println(myWife);
+        System.out.println(dirtyOne);
+        System.out.println(dog);
     }
 }
