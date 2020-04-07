@@ -17,16 +17,18 @@ public class Main {
         me.pet.feed();
         me.pet.takeForAWalk();
 
+        Car dirtyOne = new Car("Fiat", "Bravo", 2015, 1.8);
+        dirtyOne.plates = "GDA1234";
 
-        me.setCar(new Car("Fiat", "Bravo", 2015, 1.8));
-        me.getCar().plates = "GDA1234";
+        me.setCar(dirtyOne);
 
-        System.out.println(me.getCar().producer + " " + me.getCar().plates);
+        Human myWife = new Human();
+        myWife.setCar(dirtyOne);
 
-        System.out.println("I earn " + me.getSalary());
+        System.out.println(me.getCar());
+        System.out.println(myWife.getCar());
 
-        me.setSalary(200.0);
-
+        System.out.println(new Car("Fiat", "Bravo", 2015, 1.8));
 
     }
 }

@@ -17,7 +17,7 @@ public class Human {
         if(salary < 0){
             System.out.println("Sorry, I'm not an idiot I will not pay for my own job");
         } else{
-            System.out.println("Your salary is now: ");
+            System.out.println("Your salary is now: " + salary);
             this.salary = salary;
         }
     }
