@@ -14,12 +14,16 @@ public class Animal {
 
     public Animal(String species) {
         this.species = species;
-        if (species == "dog") {
-            this.weight = DEFAULT_DOG_WEIGHT;
-        } else if (species == "lion") {
-            this.weight = DEFAULT_LION_WEIGHT;
-        } else if (species == "mouse") {
-            this.weight = DEFAULT_MOUSE_WEIGHT;
+        switch (species) {
+            case "dog":
+                this.weight = DEFAULT_DOG_WEIGHT;
+                break;
+            case "lion":
+                this.weight = DEFAULT_LION_WEIGHT;
+                break;
+            case "mouse":
+                this.weight = DEFAULT_MOUSE_WEIGHT;
+                break;
         }
     }
 
@@ -41,7 +45,9 @@ public class Animal {
         } else {
             System.out.println("thx for a walk");
         }
+    }
 
-
+    public String toString() {
+        return this.species + " " + this.name;
     }
 }
