@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.devices.Car;
+import com.company.devices.Device;
 
 public class Main {
 
@@ -33,5 +34,13 @@ public class Main {
         System.out.println(myWife);
         System.out.println(dirtyOne);
         System.out.println(dog);
+
+        try {
+            me.getCar().sell();
+            me.pet.sell();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 }

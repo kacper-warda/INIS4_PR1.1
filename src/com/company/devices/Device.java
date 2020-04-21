@@ -1,6 +1,10 @@
 package com.company.devices;
 
-public class Device {
+import com.company.Saleable;
+
+import java.io.Serializable;
+
+public abstract class Device implements Saleable {
     public final String producer;
     public final String model;
     public final Integer yearOfProduction;
@@ -14,5 +18,11 @@ public class Device {
 
     public String toString() {
         return producer + " " + model;
+    }
+
+    public abstract void turnOn();
+
+    public void sell() {
+        System.out.println("you sold " + this.toString());
     }
 }

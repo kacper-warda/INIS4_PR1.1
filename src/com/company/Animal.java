@@ -2,7 +2,7 @@ package com.company;
 
 import java.io.File;
 
-public class Animal {
+public class Animal implements Edible, Saleable {
     String name;
     final String species;
     private Double weight;
@@ -49,5 +49,20 @@ public class Animal {
 
     public String toString() {
         return this.species + " " + this.name;
+    }
+
+    @Override
+    public void beEaten() {
+        System.out.println("adioooooos");
+        this.weight = 0.0;
+    }
+
+    @Override
+    public void sell() throws Exception {
+        if (this instanceof Human) {
+            throw new Exception("slavery not work anymore!");
+        } else {
+            System.out.println("you sold " + this.toString());
+        }
     }
 }

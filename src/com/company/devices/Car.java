@@ -15,4 +15,10 @@ public class Car extends Device{
     public String toString() {
         return "Car " + super.toString() + " " + this.plates;
     }
+
+    @Override
+    public void turnOn() {
+        System.out.println("turn the engine on");
+    }
+
 }
