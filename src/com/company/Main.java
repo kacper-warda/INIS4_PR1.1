@@ -1,13 +1,15 @@
 package com.company;
 
+import com.company.creatures.Animal;
+import com.company.creatures.Human;
+import com.company.creatures.Pet;
 import com.company.devices.Car;
-import com.company.devices.Device;
 import com.company.devices.Phone;
 
 public class Main {
 
     public static void main(String[] args) {
-        Animal dog = new Animal("dog");
+        Animal dog = new Pet("dog");
         dog.name = "Akita";
 
         Human me = new Human();
@@ -55,6 +57,7 @@ public class Main {
         System.out.println("****.phone " + brotherInLaw.phone);
         System.out.println("me.pet " + me.pet);
         System.out.println("****.pet " + brotherInLaw.pet);
+
 
     }
 }

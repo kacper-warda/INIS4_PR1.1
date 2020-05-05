@@ -1,11 +1,13 @@
-package com.company;
+package com.company.creatures;
+
+import com.company.Saleable;
 
 import java.io.File;
 
-public class Animal implements Edible, Saleable {
-    String name;
-    final String species;
-    private Double weight;
+public abstract class Animal implements Saleable {
+    public final String species;
+    public String name;
+    protected Double weight;
     File pic;
 
     static final Double DEFAULT_DOG_WEIGHT = 8.0;
@@ -27,7 +29,7 @@ public class Animal implements Edible, Saleable {
         }
     }
 
-    void feed() {
+    public void feed() {
         if (weight > 0) {
             weight++;
             System.out.println("thx for food bro, my weight is now " + weight);
@@ -36,7 +38,7 @@ public class Animal implements Edible, Saleable {
         }
     }
 
-    void takeForAWalk() {
+    public void takeForAWalk() {
         weight--;
         if (weight <= 0) {
             System.out.println("you can not walk the town with dead animal");
@@ -51,13 +53,6 @@ public class Animal implements Edible, Saleable {
         return this.species + " " + this.name;
     }
 
-    @Override
-    public void beEaten() {
-        System.out.println("adioooooos");
-        this.weight = 0.0;
-    }
-
-    @Override
     public void sell(Human seller, Human buyer, Double price) throws Exception {
         if (this instanceof Human) {
             throw new Exception("slavery not work anymore!");
