@@ -58,11 +58,22 @@ public class Animal implements Edible, Saleable {
     }
 
     @Override
-    public void sell() throws Exception {
+    public void sell(Human seller, Human buyer, Double price) throws Exception {
         if (this instanceof Human) {
             throw new Exception("slavery not work anymore!");
         } else {
-            System.out.println("you sold " + this.toString());
+            if (buyer.getCash() >= price) {
+                if (seller.pet == this) {
+                    buyer.pet = this;
+                    seller.pet = null;
+                    buyer.setCash(buyer.getCash() - price);
+                    seller.setCash(seller.getCash() + price);
+                } else {
+                    throw new Exception("not your dog ");
+                }
+            } else {
+                throw new Exception("not enough money man");
+            }
         }
     }
 }

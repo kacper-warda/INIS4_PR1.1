@@ -4,11 +4,12 @@ import com.company.devices.Car;
 import com.company.devices.Phone;
 
 public class Human extends Animal {
-    String firstName;
-    String lastName;
-    Phone phone;
+    public String firstName;
+    public String lastName;
+    public Phone phone;
     Animal pet;
     private Car car;
+    private Double cash = 200.0;
 
     private Double salary = 100.0;
 
@@ -34,18 +35,22 @@ public class Human extends Animal {
     }
 
     public void setCar(Car car) {
-        if (car.value <= this.salary) {
-            System.out.println("Great, you bought car by cash");
-            this.car = car;
-        } else if (car.value <= this.salary * 12) {
-            System.out.println("Not so great, you bought car on credit");
-            this.car = car;
-        } else {
-            System.out.println("Sorry, find cheaper car");
-        }
+        this.car = car;
     }
 
     public String toString() {
         return this.firstName + " " + this.lastName;
+    }
+
+    public Double getCash() {
+        return cash;
+    }
+
+    public void setCash(Double cash) throws Exception {
+        if (cash >= 0) {
+            this.cash = cash;
+        } else {
+            throw new Exception("are you kidding me?");
+        }
     }
 }
