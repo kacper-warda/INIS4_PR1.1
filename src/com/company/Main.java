@@ -1,10 +1,13 @@
 package com.company;
 
 import com.company.creatures.Animal;
+import com.company.creatures.FarmAnimal;
 import com.company.creatures.Human;
 import com.company.creatures.Pet;
 import com.company.devices.Car;
 import com.company.devices.Phone;
+
+import java.net.MalformedURLException;
 
 public class Main {
 
@@ -58,6 +61,27 @@ public class Main {
         System.out.println("me.pet " + me.pet);
         System.out.println("****.pet " + brotherInLaw.pet);
 
+        Animal bug;
+        Integer i;
+
+        String[] apps = {"facebóg", "skype", "łazap"};
+
+        try {
+            me.phone.installAnApp(apps);
+            me.phone.installAnApp("todoist", "2.4.1");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        Animal a1 = new FarmAnimal("pig");
+        Animal a2 = me;
+        Animal a3 = new Pet("cat");
+        Animal a = new Animal("spider");
+
+        System.out.println(a1.toString());
+        System.out.println(a2.toString());
+        System.out.println(a3.toString());
+        System.out.println(a.toString());
 
     }
 }

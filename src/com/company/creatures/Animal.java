@@ -4,7 +4,7 @@ import com.company.Saleable;
 
 import java.io.File;
 
-public abstract class Animal implements Saleable {
+public class Animal implements Saleable {
     public final String species;
     public String name;
     protected Double weight;
@@ -50,7 +50,7 @@ public abstract class Animal implements Saleable {
     }
 
     public String toString() {
-        return this.species + " " + this.name;
+        return "Animal: " + this.species + " " + this.name;
     }
 
     public void sell(Human seller, Human buyer, Double price) throws Exception {

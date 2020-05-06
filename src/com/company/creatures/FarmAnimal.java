@@ -11,4 +11,8 @@ public class FarmAnimal extends Animal implements Edible {
         this.weight = 0.0;
     }
 
+    public String toString() {
+        return "rgesrgesrgeagr";
+    }
+
 }
