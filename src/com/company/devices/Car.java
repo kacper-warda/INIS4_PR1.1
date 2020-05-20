@@ -26,19 +26,21 @@ public class Car extends Device {
 
     @Override
     public void sell(Human seller, Human buyer, Double price) throws Exception {
-        if (buyer.getCash() >= price) {
-            if (seller.getCar() == this) {
-                buyer.setCar(this);
-                seller.setCar(null);
-                buyer.setCash(buyer.getCash() - price);
-                seller.setCash(seller.getCash() + price);
-                System.out.println("Transaction closed, car " + this + " sold to " + buyer.firstName);
-            } else {
-                throw new Exception("cannot sell stolen cars :| ");
-            }
-        } else {
-            throw new Exception("not enough money man");
+        if (!seller.hasCar(this)) {
+            throw new Exception("don't have this car");
         }
+        if (!buyer.hasFreeSpace()) {
+            throw new Exception("to small garage");
+        }
+        if (buyer.getCash() < price) {
+            throw new Exception("not enough money");
+        }
+        seller.removeCar(this);
+        buyer.addCar(this);
+        seller.setCash(seller.getCash() + price);
+        buyer.setCash(buyer.getCash() - price);
+        System.out.println("transakcja się udała");
     }
+
 
 }

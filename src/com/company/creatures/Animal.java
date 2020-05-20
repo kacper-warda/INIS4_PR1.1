@@ -4,7 +4,7 @@ import com.company.Saleable;
 
 import java.io.File;
 
-public class Animal implements Saleable {
+abstract public class Animal implements Saleable, Feedable, Comparable<Animal> {
     public final String species;
     public String name;
     protected Double weight;
@@ -13,6 +13,8 @@ public class Animal implements Saleable {
     static final Double DEFAULT_DOG_WEIGHT = 8.0;
     static final Double DEFAULT_LION_WEIGHT = 190.0;
     static final Double DEFAULT_MOUSE_WEIGHT = 0.05;
+
+    static final Double DEFAULT_FOOD_WEIGHT = 0.5;
 
     public Animal(String species) {
         this.species = species;
@@ -29,13 +31,17 @@ public class Animal implements Saleable {
         }
     }
 
-    public void feed() {
+    public void feed(Double foodWeight) {
         if (weight > 0) {
-            weight++;
+            weight += foodWeight;
             System.out.println("thx for food bro, my weight is now " + weight);
         } else {
             System.out.println("too late, sorry");
         }
+    }
+
+    public void feed() {
+        feed(DEFAULT_FOOD_WEIGHT);
     }
 
     public void takeForAWalk() {
@@ -70,5 +76,10 @@ public class Animal implements Saleable {
                 throw new Exception("not enough money man");
             }
         }
+    }
+
+    @Override
+    public int compareTo(Animal o) {
+        return (int) (this.weight - o.weight);
     }
 }

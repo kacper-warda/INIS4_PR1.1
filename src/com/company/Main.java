@@ -1,13 +1,12 @@
 package com.company;
 
 import com.company.creatures.Animal;
-import com.company.creatures.FarmAnimal;
 import com.company.creatures.Human;
 import com.company.creatures.Pet;
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
-import java.net.MalformedURLException;
+import java.util.Arrays;
 
 public class Main {
 
@@ -15,7 +14,7 @@ public class Main {
         Animal dog = new Pet("dog");
         dog.name = "Akita";
 
-        Human me = new Human();
+        Human me = new Human(3, 4);
         me.firstName = "Kacper";
         me.lastName = "Warda";
 
@@ -25,14 +24,20 @@ public class Main {
 
         Car dirtyOne = new Car("Fiat", "Bravo", 2015, 1.8);
         dirtyOne.plates = "GDA1234";
+        dirtyOne.value = 12000.0;
 
-        me.setCar(dirtyOne);
+        me.setCar(dirtyOne, 0);
+
+        me.setCar(new Car("Alfa Romeo", "Julia", 2020, 2.4), 1);
+        me.getCar(1).value = 150000.0;
+        me.setCar(new Car("Ferrari", "FF", 2018, 5.0), 2);
+        me.getCar(2).value = 1300000.0;
 
         Human myWife = new Human();
-        myWife.setCar(dirtyOne);
+        myWife.setCar(dirtyOne, 0);
 
-        System.out.println(me.getCar());
-        System.out.println(myWife.getCar());
+        System.out.println(me.getCar(0));
+        System.out.println(myWife.getCar(0));
 
         System.out.println(new Car("Fiat", "Bravo", 2015, 1.8));
 
@@ -44,44 +49,16 @@ public class Main {
         Human brotherInLaw = new Human();
         brotherInLaw.phone = new Phone("Nokia", "3310", 1999);
 
+        System.out.println(Arrays.toString(me.getGarage()));
+        System.out.println(Arrays.toString(brotherInLaw.getGarage()));
+
         try {
-            me.getCar().sell(me, brotherInLaw, 199.0);
-            brotherInLaw.phone.sell(brotherInLaw, me, 5.0);
-            me.pet.sell(me, brotherInLaw, 2.0);
+            dirtyOne.sell(me, brotherInLaw, 199.0);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        System.out.println("me.car " + me.getCar());
-        System.out.println("szfagierrrr.car " + brotherInLaw.getCar());
-        System.out.println("me.cash " + me.getCash());
-        System.out.println("nierodzina.cash " + brotherInLaw.getCash());
-        System.out.println("me.phone " + me.phone);
-        System.out.println("****.phone " + brotherInLaw.phone);
-        System.out.println("me.pet " + me.pet);
-        System.out.println("****.pet " + brotherInLaw.pet);
-
-        Animal bug;
-        Integer i;
-
-        String[] apps = {"facebóg", "skype", "łazap"};
-
-        try {
-            me.phone.installAnApp(apps);
-            me.phone.installAnApp("todoist", "2.4.1");
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-
-        Animal a1 = new FarmAnimal("pig");
-        Animal a2 = me;
-        Animal a3 = new Pet("cat");
-        Animal a = new Animal("spider");
-
-        System.out.println(a1.toString());
-        System.out.println(a2.toString());
-        System.out.println(a3.toString());
-        System.out.println(a.toString());
-
+        System.out.println(Arrays.toString(me.getGarage()));
+        System.out.println(Arrays.toString(brotherInLaw.getGarage()));
     }
 }
